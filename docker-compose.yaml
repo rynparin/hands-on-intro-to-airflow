@@ -151,7 +151,8 @@ services:
 
     airflow-worker-2:
         <<: *airflow-common
-        command: celery worker
+        # add queued for specific task
+        command: celery worker -q high_cpu
         healthcheck:
             test:
                 - 'CMD-SHELL'
