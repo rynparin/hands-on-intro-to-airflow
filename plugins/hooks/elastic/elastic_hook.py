@@ -10,6 +10,7 @@ class ElasticHook(BaseHook):
     def __init__(self, conn_id="elastic_default", *args, **kwargs):
         # get connection
         super().__init__(*args, **kwargs)
+        # id that creat in connection tab
         conn = self.get_connection(conn_id)
 
         conn_config = {}
