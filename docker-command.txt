@@ -5,3 +5,5 @@ docker-compose down && docker-compose up -d
 docker exec -it airflow_airflow-scheduler_1 /bin/bash
 
 airflow tasks test user_processing create_table 2022-01-01
+
+docker-compose -f docker-compose-es.yaml stop && docker-compose -f docker-compose-es.yaml up -d

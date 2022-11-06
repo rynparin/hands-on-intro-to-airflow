@@ -37,3 +37,13 @@ class ElasticHook(BaseHook):
         self.set_index(index)
         res = self.es.index(index=index, doc_type=doc_type, doc=doc)
         return res
+
+
+# Register plugin to airflow
+class AirflowElasticPlugin(AirflowPlugin):
+    name = "elastic"
+    # add hooks
+    hook = [ElasticHook]
+
+
+# After add plugin -> restart docker
